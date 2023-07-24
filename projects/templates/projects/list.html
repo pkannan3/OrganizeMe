@@ -9,7 +9,7 @@
   <main>
     <div>
       <h1>My Projects</h1>
-      {% if list_projects == None %}
+      {% if Projects.owner.projects is None %}
       <p>You are not assigned to any projects</p>
       {% else %}
         <table>
