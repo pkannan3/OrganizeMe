@@ -48,13 +48,13 @@ def signup_view(request):
             if password == password_confirmation:
                 # create a new login and save info to properties
                 user = User.objects.create_user(
-                    username,
-                    password,
+                    username=username,
+                    password=password,
                 )
                 # login user
                 login(request, user)
                 # redirect to home page
-                return redirect("home")
+                return redirect("list_projects")
             else:
                 form.add_error("password", "Password do not match")
     else:
