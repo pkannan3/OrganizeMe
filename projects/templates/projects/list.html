@@ -9,23 +9,23 @@
   <main>
     <div>
       <h1>My Projects</h1>
-      {% if Projects.owner.projects is None %}
-      <p>You are not assigned to any projects</p>
+      {% if list_projects%}
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Number of tasks</th>
+        </thead>
+        <tbody>
+          {% for project in list_projects %}
+          <tr>
+            <td>{{project.name}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
       {% else %}
-        <table>
-          <thead>
-            <th>Name</th>
-            <th>Number of tasks</th>
-          </thead>
-          <tbody>
-            {% for project in list_projects %}
-            <tr>
-              <td>{{project.name}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        {% endif %}
+      <p>You are not assigned to any projects</p>
+      {% endif %}
     </div>
   </main>
 </body>
