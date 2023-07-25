@@ -1,39 +1,37 @@
 {% extends 'project_base.html' %}
 
 {% block title %}
-Tracker
+    Tracker
 {% endblock title %}
-
 {% block content %}
     <div>
-      <h1>{{task_list.name}}</h1>
-      <p>Mod 1 final assessment project</p>
-      <h2>Tasks</h2>
-      <a href="{% url 'create_task' %}">Create a new task</a>
-      {% if task_list.tasks.all %}
-      <table>
-        <thead>
-          <th>Name</th>
-          <th>Assignee</th>
-          <th>Start date</th>
-          <th>Due date</th>
-          <th>Is completed</th>
-        </thead>
-        <tbody>
-          {% for task in task_list.tasks.all %}
-          <tr>
-            <td>{{task.name}}</td>
-            <td>{{task.assignee}}</td>
-            <td>{{task.start_date}}</td>
-            <td>{{task.due_date}}</td>
-            <td>{{task.is_completed|yesno:"yes,no"}}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      {% else %}
-      <p>This project has no tasks</p>
-      {% endif %}
-
+        <h1>{{ task_list.name }}</h1>
+        <p>Mod 1 final assessment project</p>
+        <h2>Tasks</h2>
+        <a href="{% url 'create_task' %}">Create a new task</a>
+        {% if task_list.tasks.all %}
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Assignee</th>
+                    <th>Start date</th>
+                    <th>Due date</th>
+                    <th>Is completed</th>
+                </thead>
+                <tbody>
+                    {% for task in task_list.tasks.all %}
+                        <tr>
+                            <td>{{ task.name }}</td>
+                            <td>{{ task.assignee }}</td>
+                            <td>{{ task.start_date }}</td>
+                            <td>{{ task.due_date }}</td>
+                            <td>{{ task.is_completed|yesno:"yes,no" }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>This project has no tasks</p>
+        {% endif %}
     </div>
 {% endblock content %}
