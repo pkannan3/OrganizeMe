@@ -1,7 +1,8 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="grad" class="font">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,30 +10,36 @@
   <title>
     {% block title %} {% endblock title %}
   </title>
-  {% comment %} <link rel="stylesheet" href="{% static "css/recipes.css" %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/projects.css' %}">
 </head>
 
 
 <body>
   <header>
     <nav>
-      {% if user.is_authenticated %}
-      <ul>
-        <li><a href="{% url 'show_my_tasks' %}">My tasks</a></li>
-        <li><a href="{% url 'list_projects' %}">My projects</a></li>
-        <li> <a href="{% url 'logout' %}">Logout</a> </li>
-      </ul>
-      {% else %}
-        <ul>
-          <li><a href="{% url 'login' %}">Login</a></li>
-          <li><a href="{% url 'signup' %}">Signup</a></li>
-        </ul>
-      {% endif %}
     </nav>
   </header>
 
-  <main>
-  {% block content %} {% endblock content %}
+  <main class="grid-layout">
+    <div class="grid-item nav-grid">
+      {% if user.is_authenticated %}
+      <ul>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="{% url 'list_projects' %}">My Projects</a></li>
+        <li><a href="{% url 'show_my_tasks' %}">My Tasks</a></li>
+        <li> <a href="{% url 'logout' %}">Logout</a> </li>
+      </ul>
+      {% else %}
+      <ul>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Signup</a></li>
+      </ul>
+      {% endif %}
+    </div>
+
+    <div class="grid-item my-project-grid">
+      {% block content %} {% endblock content %}
+    </div>
   </main>
 
   <footer>

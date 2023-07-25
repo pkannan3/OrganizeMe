@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#grad {
+  background-image: linear-gradient(to bottom right, rgba(244, 219, 249, 255), rgba(216, 219, 254, 255));
+  background-attachment: fixed;
+}
+
+.font {
+  font-family: Helvetica Neue, Tahoma, Verdana, sans-serif;
+  letter-spacing: 1px;
+}
+
+
+/* nav {
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  background-color: #999;
+  color: #fff;
+  border: 5px solid #666;
+  padding: 20px;
+}
+
+nav>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav>ul>li {
+  float: left;
+  border: 2px solid black;
+  margin: 0;
+  padding: 0;
+}
+
+nav>ul>li>a {
+  display: block;
+  padding: 8px;
+} */
+
+/* main {
+  margin: 25px;
+  box-sizing: border-box;
+  border: 3px solid red;
+} */
+
+/*media-query*/
+
+
+.grid-layout {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  gap: 0.5em;
+  margin: 20px;
+  border: 3px dashed red;
+}
+
+main>div {
+  border: 1px dashed black;
+}
+
+.grid-item {
+  padding: 25px;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 25px;
+
+}
+
+.nav-grid {
+  grid-row-start: span 4;
+  grid-column: span 1;
+}
+
+.my-project-grid {
+  grid-row: span 4;
+  grid-column: span 6;
+
+}
+
+
+/*Links*/
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul>li {
+  /* border: 1px solid black; */
+  padding: 15px 0px 15px;
+}
+
+ul>li>a {
+  color: rgb(34, 31, 31);
+}
+
+:visited {
+  color: rgb(34, 31, 31);
+}
+
+
+/* My Projects Grid */
+table {
+  padding: 8px 15px 8px;
+  border: 1px solid white;
+  border-collapse: collapse;
+  margin: 5px 0px 15px;
+  table-layout: auto;
+  width: 100%;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 8px 15px 8px;
+  border: 1px solid white;
+  margin: 2px;
+  text-align: center;
+}
+
+
+/* #create-link {
+  margin: 15px 5px 0px;
+  text-align: right;
+} */
+
+#create-button {
+  padding: 10px 15px 10px;
+  margin: 15px 5px 5px;
+  float: right;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: white;
+  background-color: rgb(230, 229, 229);
+}
+
+
+
+
+/*Create Project Form*/
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}

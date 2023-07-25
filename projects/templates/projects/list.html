@@ -5,16 +5,22 @@ Tracker
 {% endblock title %}
 
 {% block content %}
-    <div>
+    <div class="my-projects">
       <h1>My Projects</h1>
-      <p>
-        <a href="{% url 'create_project' %}">Create a new project</a>
+      <p >
+        <button id="create-button">
+          <a href="{% url 'create_project' %}">Create Project</a>
+        </button>
       </p>
+      <div>
       {% if list_projects%}
       <table>
         <thead>
           <th>Name</th>
           <th>Number of tasks</th>
+          <th>Progress</th>
+          <th>Due Date</th>
+          <th>Departments</th>
         </thead>
         <tbody>
           {% for project in list_projects %}
@@ -23,6 +29,9 @@ Tracker
               <a href="{% url 'show_project' project.id %}">{{project.name}}</a>
             </td>
             <td>{{project.tasks.all|length}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -30,5 +39,6 @@ Tracker
       {% else %}
       <p>You are not assigned to any projects</p>
       {% endif %}
+    </div>
     </div>
 {% endblock content %}
