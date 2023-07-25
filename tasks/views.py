@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import TaskForm
 from django.contrib.auth.decorators import login_required
+from .models import Task
 
 
 # create task
@@ -21,3 +22,13 @@ def create_task(request):
         "form": form,
     }
     return render(request, "tasks/create_task.html", context)
+
+
+# list view
+@login_required
+def show_my_tasks(request):
+    tasks = Task.objects.filter(assignee=request.user)
+    context = {
+        "list_tasks": tasks,
+    }
+    return render(request, "tasks/show_my_tasks.html", context)
