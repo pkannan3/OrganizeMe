@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
 </head>
+
 <body>
   <main>
     <div>
       <h1>My Projects</h1>
+      <p>
+        <a href="{% url 'create_project' %}">Create a new project</a>
+      </p>
       {% if list_projects%}
       <table>
         <thead>
@@ -18,7 +23,10 @@
         <tbody>
           {% for project in list_projects %}
           <tr>
-            <td>{{project.name}}</td>
+            <td>
+              <a href="{% url "show_project" project.id %} ">{{project.name}}</a>
+            </td>
+            <td>{{project.tasks.all|length}}</td>
           </tr>
           {% endfor %}
         </tbody>
