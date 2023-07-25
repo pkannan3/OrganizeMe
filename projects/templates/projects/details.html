@@ -14,6 +14,7 @@
       <h1>{{task_list.name}}</h1>
       <p>Mod 1 final assessment project</p>
       <h2>Tasks</h2>
+      <a href="{% url 'create_task' %}">Create a new task</a>
       {% if task_list.tasks.all %}
       <table>
         <thead>

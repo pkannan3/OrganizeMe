@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Project
 from django.contrib.auth.decorators import login_required
 from .forms import ProjectForm
@@ -13,6 +13,18 @@ def list_projects(request):
         "list_projects": projects,
     }
     return render(request, "projects/list.html", context)
+
+
+# task list view
+@login_required
+def show_project(request, id):
+    tasks = get_object_or_404(Project, id=id)
+    # def show_project(request, id):
+    #     tasks = Task.objects.filter(assignee=request.user, id=id)
+    context = {
+        "task_list": tasks,
+    }
+    return render(request, "projects/details.html", context)
 
 
 # Protect View

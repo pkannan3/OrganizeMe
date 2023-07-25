@@ -1,18 +1,23 @@
-from django.shortcuts import render, get_object_or_404
-
-# from .models import Task
-from .models import Project
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import TaskForm
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
-# task list view
+# create task
 @login_required
-def show_project(request, id):
-    tasks = get_object_or_404(Project, id=id)
-    # def show_project(request, id):
-    #     tasks = Task.objects.filter(assignee=request.user, id=id)
+def create_task(request):
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            task = form.save(False)
+            # Set owner to user
+            task.assignee = request.user
+            form.save()
+            # Redirect to 'category_list'
+            return redirect("list_projects")
+    else:
+        form = TaskForm()
     context = {
-        "task_list": tasks,
+        "form": form,
     }
-    return render(request, "tasks/details.html", context)
+    return render(request, "tasks/create_task.html", context)
