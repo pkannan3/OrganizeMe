@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'project_base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
-</head>
+{% block title %}
+Tracker
+{% endblock title %}
 
-<body>
-  <main>
+{% block content %}
     <div>
       <h1>My Projects</h1>
       <p>
@@ -34,8 +30,5 @@
       {% else %}
       <p>You are not assigned to any projects</p>
       {% endif %}
-
     </div>
-  </main>
-</body>
-</html>
+{% endblock content %}

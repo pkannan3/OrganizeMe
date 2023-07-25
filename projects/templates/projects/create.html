@@ -1,13 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Create</title>
-	</head>
-	<body>
-	  <main>
+{% extends 'project_base.html' %}
+
+{% block title %}
+Tracker
+{% endblock title %}
+
+{% block content%}
 	    <div>
 	        <h1>Create a new project</h1>
 	        <form method="post">
@@ -16,6 +13,4 @@
 	            <button>Create</button>
 	        </form>
 	    </div>
-		</main>
-	</body>
-</html>
+{% endblock content %}

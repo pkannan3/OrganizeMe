@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'project_base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
-</head>
+{% block title %}
+Tracker
+{% endblock title %}
 
-<body>
-
-  <main>
+{% block content %}
     <div>
       <h1>{{task_list.name}}</h1>
       <p>Mod 1 final assessment project</p>
@@ -41,7 +36,4 @@
       {% endif %}
 
     </div>
-  </main>
-</body>
-
-</html>
+{% endblock content %}

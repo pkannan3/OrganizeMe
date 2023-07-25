@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'task_base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tracker</title>
-</head>
+{% block title %}Tracker{% endblock title %}
 
-<body>
-
-  <main>
+{% block content %}
     <div>
       <h1>My Tasks</h1>
       {% comment %} <a href="{% url 'create_task' %}">Create a new task</a> {% endcomment %}
@@ -36,9 +29,5 @@
       {% else %}
       <p>You have no tasks</p>
       {% endif %}
-
     </div>
-  </main>
-</body>
-
-</html>
+{% endblock content %}
