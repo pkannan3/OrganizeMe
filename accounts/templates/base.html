@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="grad" class="font">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +9,13 @@
   <title>
     {% block title %} {% endblock title %}
   </title>
-  {% comment %} <link rel="stylesheet" href="{% static "css/recipes.css" %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static "css/accounts.css" %}">
 </head>
 
-
 <body>
-  <header>
-    <nav>
+
+  <main class="grid-layout">
+    <div>
       {% if user.is_authenticated %}
       <ul>
         <li><a href="{% url 'show_my_tasks'%}">My tasks</a></li>
@@ -28,11 +28,11 @@
           <li><a href="{% url 'signup'%}"></a>Signup</li>
         </ul>
       {% endif %}
-    </nav>
-  </header>
+    </div>
 
-  <main>
-  {% block content %} {% endblock content %}
+    <div class="my-accounts-grid">
+      {% block content %} {% endblock content %}
+    </div>
   </main>
 
   <footer>

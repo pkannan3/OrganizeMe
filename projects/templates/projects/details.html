@@ -5,11 +5,14 @@ Tracker
 {% endblock title %}
 
 {% block content %}
-    <div>
+    <div class="my-projects content-grid-item">
       <h1>{{task_list.name}}</h1>
-      <p>Mod 1 final assessment project</p>
+      <p class="task-p">Mod 1 final assessment project</p>
       <h2>Tasks</h2>
-      <a href="{% url 'create_task' %}">Create a new task</a>
+      <button id="create-button" class="font">
+        <a href="{% url 'create_task' %}">Create a new task</a>
+      </button>
+      <div>
       {% if task_list.tasks.all %}
       <table>
         <thead>
@@ -32,8 +35,8 @@ Tracker
         </tbody>
       </table>
       {% else %}
-      <p>This project has no tasks</p>
+      <p class="task-p">This project has no tasks</p>
       {% endif %}
-
+      </div>
     </div>
 {% endblock content %}

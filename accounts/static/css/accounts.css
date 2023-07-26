@@ -15,48 +15,11 @@
 }
 
 
-/* nav {
-  box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  background-color: #999;
-  color: #fff;
-  border: 5px solid #666;
-  padding: 20px;
-}
-
-nav>ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav>ul>li {
-  float: left;
-  border: 2px solid black;
-  margin: 0;
-  padding: 0;
-}
-
-nav>ul>li>a {
-  display: block;
-  padding: 8px;
-} */
-
-/* main {
-  margin: 25px;
-  box-sizing: border-box;
-  border: 3px solid red;
-} */
-
-/*media-query*/
-
-
 
 .grid-layout {
   display: grid;
   grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   gap: 0em;
   margin: 20px;
   border: 3px solid white;
@@ -67,7 +30,7 @@ main>div {
   border: 1px dashed black;
 }
 
-.nav-grid-item {
+.link-grid-item {
   padding: 0px;
   /* border: 3px solid white; */
   border-radius: 10px;
@@ -84,14 +47,14 @@ main>div {
 }
 
 .nav-grid {
-  grid-row-start: span 4;
-  grid-column: span 1;
+  grid-row-start: 2/3;
+  grid-column: 2/3;
 
 }
 
-.my-project-grid {
-  grid-row: span 4;
-  grid-column: span 9;
+.my-accounts-grid {
+  grid-row: 4;
+  grid-column: 2/3;
 
 }
 

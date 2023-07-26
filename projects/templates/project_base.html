@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en" id="grad" class="font">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,15 +12,9 @@
   <link rel="stylesheet" href="{% static 'css/projects.css' %}">
 </head>
 
-
 <body>
-  <header>
-    <nav>
-    </nav>
-  </header>
-
   <main class="grid-layout">
-    <div class="grid-item nav-grid">
+    <div class="nav-grid-item nav-grid">
       {% if user.is_authenticated %}
       <ul>
         <li><a href="">Dashboard</a></li>
@@ -37,7 +30,7 @@
       {% endif %}
     </div>
 
-    <div class="grid-item my-project-grid">
+    <div class="my-project-grid">
       {% block content %} {% endblock content %}
     </div>
   </main>

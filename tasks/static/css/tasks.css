@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#grad {
+#task-grad {
   background-image: linear-gradient(to bottom right, #efd2ff, #dfa5ff);
   background-attachment: fixed;
 }
@@ -89,7 +89,7 @@ main>div {
 
 }
 
-.my-project-grid {
+.my-tasks-grid {
   grid-row: span 4;
   grid-column: span 9;
 
@@ -120,7 +120,7 @@ ul>li>a {
   color: rgb(51, 48, 48);
 }
 
-div>ul>li:hover {
+li:hover {
   color: gray;
   font-weight: bold;
   background-color: rgba(174, 75, 255, 0.187);
