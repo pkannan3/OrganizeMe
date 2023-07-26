@@ -5,36 +5,45 @@ Tracker
 {% endblock title %}
 
 {% block content %}
-      <h1>{{task_list.name}}</h1>
-      <p class="task-p">Mod 1 final assessment project</p>
-      <h2>Tasks</h2>
-      <button class="create-button">
-        <a href="{% url 'create_task' %}">Create a new task</a>
-      </button>
-      <div>
-      {% if task_list.tasks.all %}
-      <table>
-        <thead>
-          <th>Name</th>
-          <th>Assignee</th>
-          <th>Start date</th>
-          <th>Due date</th>
-          <th>Is completed</th>
-        </thead>
-        <tbody>
-          {% for task in task_list.tasks.all %}
-          <tr>
-            <td>{{task.name}}</td>
-            <td>{{task.assignee}}</td>
-            <td>{{task.start_date}}</td>
-            <td>{{task.due_date}}</td>
-            <td>{{task.is_completed|yesno:"yes,no"}}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      {% else %}
-      <p class="task-p">This project has no tasks</p>
-      {% endif %}
-      </div>
+
+
+<div class="timeline-item">
+  <p>Timeline</p>
+</div>
+
+
+<div class="content-grid-item">
+  <h1>{{task_list.name}}</h1>
+  <p class="task-p">Mod 1 final assessment project</p>
+  <h2>Tasks</h2>
+  <button class="create-button">
+    <a href="{% url 'create_task' %}">Create a new task</a>
+  </button>
+  <div>
+    {% if task_list.tasks.all %}
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Assignee</th>
+        <th>Start date</th>
+        <th>Due date</th>
+        <th>Is completed</th>
+      </thead>
+      <tbody>
+        {% for task in task_list.tasks.all %}
+        <tr>
+          <td>{{task.name}}</td>
+          <td>{{task.assignee}}</td>
+          <td>{{task.start_date}}</td>
+          <td>{{task.due_date}}</td>
+          <td>{{task.is_completed|yesno:"yes,no"}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="task-p">This project has no tasks</p>
+    {% endif %}
+  </div>
+</div>
 {% endblock content %}

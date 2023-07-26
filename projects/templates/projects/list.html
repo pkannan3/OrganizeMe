@@ -5,6 +5,25 @@ Tracker
 {% endblock title %}
 
 {% block content %}
+
+<div class="overview-item-1">
+  <p>Overview 1</p>
+</div>
+
+<div class="overview-item-2">
+  <p>Overview 2</p>
+</div>
+
+<div class="overview-item-3">
+  <p>Overview 3</p>
+</div>
+
+<div class="overview-item-4">
+  <p>Overview 4</p>
+</div>
+
+
+<div class="content-grid-item">
   <h1>My Projects</h1>
   <div>
     <p>
@@ -26,6 +45,7 @@ Tracker
       <tbody>
         {% for project in list_projects %}
         <tr>
+          <!--Hovers Over All <td>s-->
           <td>
             <a href="{% url 'show_project' project.id %}">{{project.name}}</a>
           </td>
@@ -41,4 +61,5 @@ Tracker
     <p>You are not assigned to any projects</p>
     {% endif %}
   </div>
+</div>
 {% endblock content %}

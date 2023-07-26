@@ -16,15 +16,12 @@
 </head>
 
 <body>
-  <!--REMOVE DULICATES-->
   <div>
     <header>
       <div id="welcome-header">
-        {% comment %} {% for task in task_list.tasks.all %} {% endcomment %}
         <h1>
-          Welcome, {{task_list.assignee}}
+          Project Manager
         </h1>
-        {% comment %} {% endfor %} {% endcomment %}
       </div>
     </header>
     <main>
@@ -62,30 +59,26 @@
           {% endif %}
         </div>
 
-        <div class="search-grid-item">
-          <input type="text" placeholder="Search..">
-          <button>Search</button>
+        <div class="placeholder-item">
+          <p>placeholder</p>
         </div>
 
-        <div class="overview-item-1">
-          <p>Overview 1</p>
+        <!--ALIGN TO THE RIGHT-->
+        <div>
+          <form action="">
+            <input type="search" required>
+            <i class="fa fa-search"></i>
+            <a href="javascript:void(0)" id="clear-btn"></a>
+          </form>
         </div>
 
-        <div class="overview-item-2">
-          <p>Overview 2</p>
+        <!--NAME DOES NOT POPULATE-->
+        <div class="user-name-item">
+          <p>{{list_task.assignee}} user's name</p>
         </div>
 
-        <div class="overview-item-3">
-          <p>Overview 3</p>
-        </div>
+        {% block content %} {% endblock content %}
 
-        <div class="overview-item-4">
-          <p>Overview 4</p>
-        </div>
-
-        <div class="content-grid-item">
-          {% block content %} {% endblock content %}
-        </div>
       </div>
     </main>
 
