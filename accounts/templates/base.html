@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en" id="grad" class="font">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,13 @@
   <title>
     {% block title %} {% endblock title %}
   </title>
-  <link rel="stylesheet" href="{% static "css/accounts.css" %}">
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
 </head>
 
 <body>
 
   <main class="grid-layout">
-    <div>
+    <div class="link-grid link-grid-item">
       {% if user.is_authenticated %}
       <ul>
         <li><a href="{% url 'show_my_tasks'%}">My tasks</a></li>
@@ -23,14 +24,12 @@
         <li> <a href="{% url 'logout'%}">Logout</a> </li>
       </ul>
       {% else %}
-        <ul>
-          <li><a href="{% url 'login'%}"></a>Login</li>
-          <li><a href="{% url 'signup'%}"></a>Signup</li>
-        </ul>
+      <button><a href="{% url 'login'%}">Login</a></button>
+      <button><a href="{% url 'signup'%}">Signup</a></button>
       {% endif %}
     </div>
 
-    <div class="my-accounts-grid">
+    <div class="my-accounts-grid content-grid-item">
       {% block content %} {% endblock content %}
     </div>
   </main>

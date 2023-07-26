@@ -18,8 +18,8 @@
 
 .grid-layout {
   display: grid;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto auto;
   gap: 0em;
   margin: 20px;
   border: 3px solid white;
@@ -44,17 +44,17 @@ main>div {
   border-radius: 10px;
   margin: 25px;
   background-color: rgb(252, 249, 255);
+  justify-self: center;
+  align-self: center;
 }
 
-.nav-grid {
-  grid-row-start: 2/3;
-  grid-column: 2/3;
-
+.link-grid {
+  justify-content: center;
+  border: 2px solid red;
 }
 
 .my-accounts-grid {
-  grid-row: 4;
-  grid-column: 2/3;
+  justify-content: center;
 
 }
 
