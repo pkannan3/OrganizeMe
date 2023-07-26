@@ -11,32 +11,100 @@
     {% block title %} {% endblock title %}
   </title>
   <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <main class="grid-layout">
-    <div class="nav-grid-item nav-grid">
-      {% if user.is_authenticated %}
-      <ul>
-        <li><a href="">Dashboard</a></li>
-        <li><a href="{% url 'list_projects' %}">My Projects</a></li>
-        <li><a href="{% url 'show_my_tasks' %}">My Tasks</a></li>
-        <li> <a href="{% url 'logout' %}">Logout</a> </li>
-      </ul>
-      {% else %}
-      <ul>
-        <li><a href="{% url 'login' %}">Login</a></li>
-        <li><a href="{% url 'signup' %}">Signup</a></li>
-      </ul>
-      {% endif %}
-    </div>
+  <!--REMOVE DULICATES-->
+  <div>
+    <header>
+      <div id="welcome-header">
+        {% comment %} {% for task in task_list.tasks.all %} {% endcomment %}
+        <h1>
+          Welcome, {{task_list.assignee}}
+        </h1>
+        {% comment %} {% endfor %} {% endcomment %}
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="nav-grid-item">
+          {% if user.is_authenticated %}
+          <!--CREATE DASHBOARD VIEW-->
+          <ul>
+            <li>
+              <i class="fa-solid fa-shapes"></i>
+              <a href="">Dashboard</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-bars-progress"></i>
+              <a href="{% url 'list_projects' %}">My Projects</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-list-check"></i>
+              <a href="{% url 'show_my_tasks' %}">My Tasks</a>
+            </li>
+            <li>
+              <i class="fa fa-cloud"></i>
+              <a href="">Notes</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <a href="{% url 'logout' %}">Logout</a>
+            </li>
+          </ul>
+          {% else %}
+          <ul>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Signup</a></li>
+          </ul>
+          {% endif %}
+        </div>
 
-    <div class="my-project-grid">
-      {% block content %} {% endblock content %}
-    </div>
-  </main>
+        <div class="search-grid-item">
+          <input type="text" placeholder="Search..">
+          <button>Search</button>
+        </div>
 
-  <footer>
-    <p></p>
-  </footer>
+        <div class="overview-item-1">
+          <p>Overview 1</p>
+        </div>
+
+        <div class="overview-item-2">
+          <p>Overview 2</p>
+        </div>
+
+        <div class="overview-item-3">
+          <p>Overview 3</p>
+        </div>
+
+        <div class="overview-item-4">
+          <p>Overview 4</p>
+        </div>
+
+        <div class="content-grid-item">
+          {% block content %} {% endblock content %}
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div>
+          <p>Copyright Content</p>
+        </div>
+        <div>
+          <a href="">
+            <p>Privacy Policy</p>
+          </a>
+        </div>
+        <div>
+          <a href="">
+            <p>Help Desk</p>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
