@@ -13,50 +13,6 @@ body {
   font-family: Helvetica Neue, Tahoma, Verdana, sans-serif;
   letter-spacing: 2px;
   color: rgb(84, 83, 83);
-}
-
-#welcome-header {
-  text-align: left;
-  padding: 25px 25px 8px;
-}
-
-/* nav {
-  box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  background-color: #999;
-  color: #fff;
-  border: 5px solid #666;
-  padding: 20px;
-}
-
-nav>ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav>ul>li {
-  float: left;
-  border: 2px solid black;
-  margin: 0;
-  padding: 0;
-}
-
-nav>ul>li>a {
-  display: block;
-  padding: 8px;
-} */
-
-/* main {
-  margin: 25px;
-  box-sizing: border-box;
-  border: 3px solid red;
-} */
-
-/*media-query*/
-
-body {
   height: 98vh;
   width: 98vw;
 }
@@ -64,6 +20,17 @@ body {
 body>div {
   height: 100%;
 }
+
+#welcome-header {
+  text-align: left;
+  padding: 25px 25px 8px;
+}
+
+
+/*media-query*/
+
+
+
 
 .container {
   display: grid;
@@ -183,7 +150,6 @@ body>div {
 }
 
 .create-task-item {
-
   background-color: rgb(252, 249, 255);
   grid-row: 4 / 9;
   grid-column: 12 / 16;
@@ -253,9 +219,9 @@ div>div>ul>li:hover {
 
 /* My Projects Grid */
 
-/* .task-p {
+.task-p {
   margin: 10px 0px 20px;
-} */
+}
 
 .field-name {
   margin: 20px 0px 5px;

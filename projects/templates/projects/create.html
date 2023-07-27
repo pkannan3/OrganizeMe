@@ -1,25 +1,11 @@
 {% extends 'project_base.html' %}
+{% load widget_tweaks %}
 
 {% block title %}
 Tracker
 {% endblock title %}
 
 {% block content %}
-{% load widget_tweaks %}
-
-
-{% comment %} <div class="create-grid-item">
-	<h1>Create a new project</h1>
-	<form method="post">
-		<ul class="contact-form">
-			<li>
-				{% csrf_token %}
-				{{ form.as_p }}
-				<button>Create</button>
-			</li>
-		</ul>
-	</form>
-</div> {% endcomment %}
 
 <div class="create-grid-item">
   <h1>Welcome</h1>
@@ -27,15 +13,15 @@ Tracker
     {% csrf_token %}
 
 		<p class="field-name">
-    Name:<p class="task-p">{% render_field form.name placeholder="Project Name" class+="form-control" %}</p>
+    Name:<p>{% render_field form.name placeholder="Project Name" class+="form-control" %}</p>
 		</p>
 
 		<p class="field-name">
-    Description: <p class="task-p">{% render_field form.description placeholder="This task will.." class+="form-control" %}</p>
+    Description: <p>{% render_field form.description placeholder="This task will.." class+="form-control" %}</p>
 		</p>
 
 		<p class="field-name">
-		Owner:<p class="task-p">{% render_field form.owner placeholder="Owner" class+="form-control" %}</p>
+		Owner:<p>{% render_field form.owner placeholder="Owner" class+="form-control" %}</p>
 		</p>
     <p><button class="task-create-button">Create</button></p>
   </form>

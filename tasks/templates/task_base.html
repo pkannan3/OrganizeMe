@@ -14,29 +14,79 @@
 </head>
 
 <body>
-  <main class="grid-layout">
-    <div class="nav-grid-item nav-grid">
-      {% if user.is_authenticated %}
-      <ul>
-        <li><a href="">Dashboard</a></li>
-        <li><a href="{% url 'list_projects' %}">My Projects</a></li>
-        <li><a href="{% url 'show_my_tasks' %}">My Tasks</a></li>
-        <li> <a href="{% url 'logout' %}">Logout</a> </li>
-      </ul>
-      {% else %}
-      <ul>
-        <li><a href="{% url 'login' %}">Login</a></li>
-        <li><a href="{% url 'signup' %}">Signup</a></li>
-      </ul>
-      {% endif %}
-    </div>
+  <main>
 
-    <div class="my-tasks-grid">
-      {% block content %} {% endblock content %}
-    </div>
-  </main>
+    <div class="container">
 
-  <footer>
-    <p></p>
-  </footer>
+      <div class="nav-grid-item">
+        {% if user.is_authenticated %}
+        <!--CREATE DASHBOARD VIEW-->
+        <ul>
+          <li>
+            <a href="">❖ Dashboard</a>
+          </li>
+          <li>
+            <a href="{% url 'list_projects' %}">𝌓 My Projects</a>
+          </li>
+          <li>
+            <a href="{% url 'show_my_tasks' %}">☑︎ My Tasks</a>
+          </li>
+          <li>
+            <a href="">✎ Notes</a>
+          </li>
+          <li>
+            <a href="{% url 'logout' %}">⇱ Logout</a>
+          </li>
+        </ul>
+
+        <img src="{% static 'images/ghost_heart.gif' %}" alt="Hovering Ghost">
+
+        {% else %}
+        <ul>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Signup</a></li>
+        </ul>
+        {% endif %}
+      </div>
+
+      <div class="placeholder-item">
+        <p>placeholder</p>
+      </div>
+
+      <div class="search-grid-item">
+        <p>search bar</p>
+      </div>
+
+      <div class="user-name-item">
+        {% if user.is_authenticated %}
+            <!--HOW does it know to use 'user' from accounts.views?-->
+            Welcome Back, {{ user.username }} 😊
+          <!--else return signup webpage-->
+          {% else %}
+            <a href="{% url 'signup'%}">Sign up</a>
+          <!--end conditional-->
+          {% endif %}
+      </div>
+
+        {% block content %} {% endblock content %}
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div>
+          <p>Copyright Content</p>
+        </div>
+        <div>
+          <a href="">
+            <p>Privacy Policy</p>
+          </a>
+        </div>
+        <div>
+          <a href="">
+            <p>Help Desk</p>
+          </a>
+        </div>
+      </div>
+    </footer>
 </body>

@@ -1,16 +1,36 @@
 {% extends 'task_base.html' %}
+{% load widget_tweaks %}
 
 {% block title %}
 Tracker
 {% endblock title %}
 
 {% block content%}
-	    <div>
-	        <h1>Create a new task</h1>
-	        <form method="post">
-	            {% csrf_token %}
-	            {{ form.as_p }}
-	            <button>Create</button>
-	        </form>
-	    </div>
+	<div class="create-grid-item">
+			<h1>Create a new task</h1>
+			<form method="post">
+				{% csrf_token %}
+
+				<p class="field-name">
+				Name:<p>{% render_field form.name placeholder="Task Name" class+="form-control" %}</p>
+				</p>
+
+				<p class="field-name">
+					Start Date: <p>{% render_field form.start_date placeholder="Start on.." class+="form-control" %}</p>
+				</p>
+
+				<p class="field-name">
+					Due Date:<p>{% render_field form.due_date placeholder="Due on.." class+="form-control" %}</p>
+				</p>
+
+				<p class="field-name">
+					Project Name:<p>{% render_field form.project placeholder="Project Name" class+="form-control" %}</p>
+				</p>
+
+				<p class="field-name">
+					Assign to:<p>{% render_field form.assignee placeholder="Assignee" class+="form-control" %}</p>
+				</p>
+				<p><button class="task-create-button">Create</button></p>
+			</form>
+	</div>
 {% endblock content %}

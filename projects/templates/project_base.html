@@ -25,34 +25,31 @@
       </div>
     </header>
     <main>
+
       <div class="container">
+
         <div class="nav-grid-item">
           {% if user.is_authenticated %}
           <!--CREATE DASHBOARD VIEW-->
           <ul>
             <li>
-              <i class="fa-solid fa-shapes"></i>
               <a href="">❖ Dashboard</a>
             </li>
             <li>
-              <i class="fa-solid fa-bars-progress"></i>
               <a href="{% url 'list_projects' %}">𝌓 My Projects</a>
             </li>
             <li>
-              <i class="fa-solid fa-list-check"></i>
               <a href="{% url 'show_my_tasks' %}">☑︎ My Tasks</a>
             </li>
             <li>
-              {% comment %} <i class="fa fa-cloud"></i> {% endcomment %}
               <a href="">✎ Notes</a>
             </li>
             <li>
-              <i class="fa-solid fa-arrow-right-from-bracket"></i>
               <a href="{% url 'logout' %}">⇱ Logout</a>
             </li>
           </ul>
 
-            <img src="{% static 'images/ghost_heart.gif' %}" alt="Dancing Duck">
+            <img src="{% static 'images/ghost_heart.gif' %}" alt="Hovering Ghost">
 
           {% else %}
           <ul>
@@ -66,16 +63,10 @@
           <p>placeholder</p>
         </div>
 
-        {% comment %} <!--ALIGN TO THE RIGHT-->
-        <div class="empty">
-          <form action="">
-            <input type="search" required>
-            <i class="fa fa-search"></i>
-            <a href="javascript:void(0)" id="clear-btn"></a>
-          </form>
-        </div> {% endcomment %}
+        <div class="search-grid-item">
+          <p>search bar</p>
+        </div>
 
-        <!--NAME DOES NOT POPULATE USER'S NAME-->
         <div class="user-name-item">
           {% if user.is_authenticated %}
               <!--HOW does it know to use 'user' from accounts.views?-->
@@ -88,8 +79,8 @@
         </div>
 
         {% block content %} {% endblock content %}
-
       </div>
+
     </main>
 
     <footer>
