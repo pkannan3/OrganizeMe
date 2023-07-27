@@ -51,6 +51,9 @@
               <a href="{% url 'logout' %}">⇱ Logout</a>
             </li>
           </ul>
+
+            <img src="{% static 'images/ghost_heart.gif' %}" alt="Dancing Duck">
+
           {% else %}
           <ul>
             <li><a href="{% url 'login' %}">Login</a></li>
@@ -76,7 +79,7 @@
         <div class="user-name-item">
           {% if user.is_authenticated %}
               <!--HOW does it know to use 'user' from accounts.views?-->
-              Hello, {{ user.username }}
+              Welcome Back, {{ user.username }} 😊
             <!--else return signup webpage-->
             {% else %}
               <a href="{% url 'signup'%}">Sign up</a>
