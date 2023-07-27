@@ -5,9 +5,10 @@ Tracker
 {% endblock title %}
 
 {% block content %}
+{% load widget_tweaks %}
 
 
-<div class="create-grid-item">
+{% comment %} <div class="create-grid-item">
 	<h1>Create a new project</h1>
 	<form method="post">
 		<ul class="contact-form">
@@ -18,18 +19,26 @@ Tracker
 			</li>
 		</ul>
 	</form>
+</div> {% endcomment %}
+
+<div class="create-grid-item">
+  <h1>Welcome</h1>
+  <form method="post">
+    {% csrf_token %}
+
+		<p class="field-name">
+    Name:<p class="task-p">{% render_field form.name placeholder="Project Name" class+="form-control" %}</p>
+		</p>
+
+		<p class="field-name">
+    Description: <p class="task-p">{% render_field form.description placeholder="This task will.." class+="form-control" %}</p>
+		</p>
+
+		<p class="field-name">
+		Owner:<p class="task-p">{% render_field form.owner placeholder="Owner" class+="form-control" %}</p>
+		</p>
+    <p><button class="task-create-button">Create</button></p>
+  </form>
 </div>
-<!-- <div class="container">
-	<h1>Create a new project</h1>
-	<form method="post">
-		{% csrf_token %}
-		<div class="form-group">
-			{{ form }}
-		</div>
-		<div class="form-group">
-			<input class="btn btn-success" type="submit" value="Create">
-		</div>
-	</form>
-</div> -->
 
 {% endblock content %}
