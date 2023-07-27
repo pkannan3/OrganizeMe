@@ -32,23 +32,23 @@
           <ul>
             <li>
               <i class="fa-solid fa-shapes"></i>
-              <a href="">Dashboard</a>
+              <a href="">❖ Dashboard</a>
             </li>
             <li>
               <i class="fa-solid fa-bars-progress"></i>
-              <a href="{% url 'list_projects' %}">My Projects</a>
+              <a href="{% url 'list_projects' %}">𝌓 My Projects</a>
             </li>
             <li>
               <i class="fa-solid fa-list-check"></i>
-              <a href="{% url 'show_my_tasks' %}">My Tasks</a>
+              <a href="{% url 'show_my_tasks' %}">☑︎ My Tasks</a>
             </li>
             <li>
-              <i class="fa fa-cloud"></i>
-              <a href="">Notes</a>
+              {% comment %} <i class="fa fa-cloud"></i> {% endcomment %}
+              <a href="">✎ Notes</a>
             </li>
             <li>
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              <a href="{% url 'logout' %}">Logout</a>
+              <a href="{% url 'logout' %}">⇱ Logout</a>
             </li>
           </ul>
           {% else %}
@@ -63,18 +63,25 @@
           <p>placeholder</p>
         </div>
 
-        <!--ALIGN TO THE RIGHT-->
-        <div>
+        {% comment %} <!--ALIGN TO THE RIGHT-->
+        <div class="empty">
           <form action="">
             <input type="search" required>
             <i class="fa fa-search"></i>
             <a href="javascript:void(0)" id="clear-btn"></a>
           </form>
-        </div>
+        </div> {% endcomment %}
 
-        <!--NAME DOES NOT POPULATE-->
+        <!--NAME DOES NOT POPULATE USER'S NAME-->
         <div class="user-name-item">
-          <p>{{list_task.assignee}} user's name</p>
+          {% if user.is_authenticated %}
+              <!--HOW does it know to use 'user' from accounts.views?-->
+              Hello, {{ user.username }}
+            <!--else return signup webpage-->
+            {% else %}
+              <a href="{% url 'signup'%}">Sign up</a>
+            <!--end conditional-->
+            {% endif %}
         </div>
 
         {% block content %} {% endblock content %}

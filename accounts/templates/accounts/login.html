@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
 
 {% block title %} Login {% endblock title %}
 
 {% block content %}
-    <div class="">
-      <h1>Login</h1>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button>Login</button>
-      </form>
-    </div>
+<div class="banner-item">
+  <img src="{% static 'images/bored_boy.png' %}" alt="bored boy in classroom">
+</div>
+
+
+<div class="user-pass-item">
+  <h1>Welcome</h1>
+  <form method="post">
+    {% csrf_token %}
+    <p>{% render_field form.username placeholder="Username" class+="form-control" %}</p>
+    <p>{% render_field form.password placeholder="Password" class+="form-control" %}</p>
+    <p><button>Login</button></p>
+    <p class="signup-link"><a href="{% url 'signup'%}">Signup</a></p>
+  </form>
+</div>
+
+{% comment %} <div class="">
+  <h1>Login</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Login</button>
+  </form>
+</div> {% endcomment %}
 {% endblock content %}

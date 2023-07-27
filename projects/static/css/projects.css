@@ -74,6 +74,8 @@ body>div {
   border: 3px solid white;
   border-radius: 10px;
   height: 100%;
+  background-image: linear-gradient(to top bottom, #efd2ff, #dfa5ff);
+  background-attachment: fixed;
 }
 
 .nav-grid-item {
@@ -167,6 +169,16 @@ body>div {
   grid-column: 3 / 16;
 }
 
+.create-grid-item {
+  padding: 10px;
+  margin: 0px;
+  border: 3px solid white;
+  border-radius: 10px;
+  background-color: rgb(252, 249, 255);
+  grid-row: 2 / 12;
+  grid-column: 3 / 16;
+}
+
 /*
 .grid-area {
   grid-area: row-start col-start row-end col-end;
@@ -204,7 +216,9 @@ div>div>ul>li:hover {
   background-color: rgba(174, 75, 255, 0.187);
 }
 
-tr td:hover {
+.empty {}
+
+.empty:hover {
   color: gray;
   font-weight: bold;
   background-color: rgba(174, 75, 255, 0.187);
@@ -262,6 +276,17 @@ td {
   letter-spacing: 1.5px;
 }
 
+.create-center-button {
+  padding: 5px 10px 5px;
+  margin: 15px 0px 10px;
+  float: center;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: rgb(245, 240, 240);
+  font-family: Helvetica Neue, Tahoma, Verdana, sans-serif;
+  letter-spacing: 1.5px;
+}
+
 button:hover {
   color: white;
   background-color: rgb(200, 196, 196);
@@ -298,7 +323,7 @@ footer>div>a:hover {
 
 
 /*Search Bar*/
-form {
+/* .empty form {
   position: relative;
   top: 50%;
   left: 50%;
@@ -348,24 +373,24 @@ input {
   transition: all 1s;
 }
 
-form:hover,
-form:valid {
+.empty form:hover,
+.empty form:valid {
   width: 600px;
   cursor: pointer;
 }
 
-form:hover input,
-form:valid input {
+.empty form:hover input,
+.empty form:valid input {
   display: block;
 }
 
-form:hover .fa,
-form:valid .fa {
+.empty form:hover .fa,
+.empty form:valid .fa {
   background: rgb(84, 83, 83);
   color: white;
 }
 
-/* a {
+a {
   display: none;
   position: absolute;
   top: 70px;
@@ -376,9 +401,9 @@ form:valid .fa {
   color: white;
   text-align: center;
   width: 100%;
-} */
+}
 
-form:valid a {
+.empty form:valid a {
   display: block;
   justify-self: right;
-}
+} */

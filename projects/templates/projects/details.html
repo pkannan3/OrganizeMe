@@ -16,11 +16,14 @@ Tracker
   <h1>{{task_list.name}}</h1>
   <p class="task-p">Mod 1 final assessment project</p>
   <h2>Tasks</h2>
-  <button class="create-button">
+  {% comment %} <button class="create-button">
     <a href="{% url 'create_task' %}">Create a new task</a>
-  </button>
+  </button> {% endcomment %}
   <div>
     {% if task_list.tasks.all %}
+    <button class="create-button">
+      <a href="{% url 'create_task' %}">Create a new task</a>
+    </button>
     <table>
       <thead>
         <th>Name</th>
@@ -42,7 +45,16 @@ Tracker
       </tbody>
     </table>
     {% else %}
-    <p class="task-p">This project has no tasks</p>
+    <table>
+      <tr>
+        <td>
+          <p>This project has no tasks</p>
+          <button class="create-center-button">
+            <a href="{% url 'create_task' %}">Create a new task</a>
+          </button>
+        </td>
+      </tr>
+    </table>
     {% endif %}
   </div>
 </div>

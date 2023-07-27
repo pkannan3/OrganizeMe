@@ -46,7 +46,7 @@ Tracker
         {% for project in list_projects %}
         <tr>
           <!--Hovers Over All <td>s-->
-          <td>
+          <td class="empty">
             <a href="{% url 'show_project' project.id %}">{{project.name}}</a>
           </td>
           <td>{{project.tasks.all|length}}</td>
