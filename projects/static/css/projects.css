@@ -56,7 +56,7 @@ body>div {
   height: auto;
 }
 
-.placeholder-item {
+.search-grid-item {
   padding: 10px;
   border: 3px solid white;
   border-radius: 10px;
@@ -65,7 +65,8 @@ body>div {
   grid-column: 3 / 6;
 }
 
-.search-grid-item {
+.placeholder-item {
+  /* position: absolute; */
   padding: 10px;
   border: 3px solid white;
   border-radius: 10px;
@@ -162,13 +163,51 @@ body>div {
 */
 
 /*Dancing Duck*/
-img {
+.nav-grid-item img {
   width: 10%;
   height: auto;
   display: grid;
   position: fixed;
   bottom: 12%;
   left: 3%;
+}
+
+.search-grid-item input {
+  height: 35px;
+  width: 85%;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.search-grid-item button {
+  height: 68%;
+  width: 12%;
+  background-color: efd2ff;
+  border: 0px solid black;
+  border-radius: 4px;
+}
+
+/* .search-grid-item button:hover {
+  background-color: p;
+
+} */
+
+.overview-item-1 img {
+  position: relative;
+  top: 7%;
+  left: 10.5%;
+}
+
+.overview-item-2 img {
+  position: relative;
+  top: 7%;
+  left: 12.5%;
+}
+
+.overview-item-3 img {
+  position: relative;
+  top: 7%;
+  left: 12.5%;
 }
 
 
@@ -218,6 +257,19 @@ div>div>ul>li:hover {
 
 
 /* My Projects Grid */
+.overview-item-4 h3 {
+  margin: 0px 0px 10px;
+  padding: 0;
+}
+
+.overview-item-4 ul>li {
+  margin: 0;
+  padding: 15px 15px 15px;
+  border-bottom: 1px solid rgb(201, 196, 201);
+}
+
+
+
 
 .task-p {
   margin: 10px 0px 20px;

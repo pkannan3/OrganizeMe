@@ -60,12 +60,12 @@
 /* Left Hand */
 div>img {
   display: grid;
-  width: 70%;
+  width: 55%;
   height: auto;
   border-radius: 10px;
   position: fixed;
-  top: 15%;
-  left: 15%;
+  top: 11.5%;
+  left: 19.75%;
   right: 20%;
   bottom: 15%;
 

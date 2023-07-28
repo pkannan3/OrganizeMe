@@ -1,4 +1,5 @@
 {% extends 'project_base.html' %}
+{% load static %}
 
 {% block title %}
 Tracker
@@ -8,19 +9,36 @@ Tracker
 {% load static %}
 
 <div class="overview-item-1">
-  <p>Overview 1</p>
+  <h3>Started</h3>
+  <img src="{% static 'images/started.png' %}" alt="Circular Chart">
 </div>
 
 <div class="overview-item-2">
-  <p>Overview 2</p>
+  <h3>Completed</h3>
+  <img src="{% static 'images/completed.png' %}" alt="Circular Chart">
 </div>
 
 <div class="overview-item-3">
-  <p>Overview 3</p>
+  <h3>Pending</h3>
+  <img src="{% static 'images/pending.png' %}" alt="Circular Chart">
 </div>
 
 <div class="overview-item-4">
-  <p>Overview 4</p>
+  <h3>Upcoming Meetings:</h3>
+  <ul>
+    <li>
+      Weekly Standup: 08/04/2023 9:15 am
+    </li>
+    <li>
+      Meet w/ Finance: 08/12/2023 12:30 pm
+    </li>
+    <li>
+      Meet w/ Marketing: 08/13/2023 4:30 pm
+    </li>
+    <li>
+      Leadership Meeting: 08/30/2023
+    </li>
+  </ul>
 </div>
 
 
@@ -52,7 +70,7 @@ Tracker
             <label for="file-upload" class="custom-file-upload">
               Upload File
             </label>
-            <input id="file-upload" type="file"/>
+            <input id="file-upload" type="file" />
           </td>
 
         </tr>
