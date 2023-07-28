@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="banner-item">
-  <img src="{% static 'images/bored_boy.png' %}" alt="bored boy in classroom">
+  <img src="{% static 'images/group_working.png' %}" alt="bored boy in classroom">
 </div>
 
 
@@ -14,9 +14,10 @@
   <h1>Welcome</h1>
   <form method="post">
     {% csrf_token %}
+    <!--RETURN 'INVALID USER'-->
     <p>{% render_field form.username placeholder="Username" class+="form-control" %}</p>
     <p>{% render_field form.password placeholder="Password" class+="form-control" %}</p>
-    <p><button>Login</button></p>
+    <p><a href=""><button>Login</button></a></p>
     <p class="login-signup-link"><a href="{% url 'signup'%}">Signup</a></p>
   </form>
 </div>

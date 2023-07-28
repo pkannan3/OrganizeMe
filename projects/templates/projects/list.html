@@ -26,13 +26,7 @@ Tracker
 
 <div class="content-grid-item">
   <h1>My Projects</h1>
-  <div>
-    <p>
-      <button class="create-button">
-        <a href="{% url 'create_project' %}">Create Project</a>
-      </button>
-    </p>
-  </div>
+
   <div>
     {% if list_projects%}
     <table>
@@ -40,8 +34,8 @@ Tracker
         <th>Name</th>
         <th>Number of tasks</th>
         <th>Progress</th>
-        <th>Due Date</th>
         <th>Departments</th>
+        <th>Attachments</th>
       </thead>
       <tbody>
         {% for project in list_projects %}
@@ -53,13 +47,29 @@ Tracker
           <td>{{project.tasks.all|length}}</td>
           <td></td>
           <td></td>
-          <td></td>
+
+          <td>
+            <label for="file-upload" class="custom-file-upload">
+              Upload File
+            </label>
+            <input id="file-upload" type="file"/>
+          </td>
+
         </tr>
         {% endfor %}
       </tbody>
     </table>
     {% else %}
-    <p>You are not assigned to any projects</p>
+    <table>
+      <tr>
+        <td>
+          <p>This project has no tasks</p>
+          <button class="create-center-button">
+            <a href="{% url 'create_task' %}">Create a new project</a>
+          </button>
+        </td>
+      </tr>
+    </table>
     {% endif %}
   </div>
 </div>
