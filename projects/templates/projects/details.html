@@ -1,4 +1,5 @@
 {% extends 'project_base.html' %}
+{% load static %}
 
 {% block title %}
 Tracker
@@ -39,7 +40,11 @@ Tracker
           <td>{{task.assignee}}</td>
           <td>{{task.start_date}}</td>
           <td>{{task.due_date}}</td>
-          <td>{{task.is_completed|yesno:"yes,no"}}</td>
+          <td>
+            <select class="dropdown">
+              <option>{{task.is_completed|yesno:"yes,no"}}</option>
+            </select>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
