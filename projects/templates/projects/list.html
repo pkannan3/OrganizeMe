@@ -51,8 +51,9 @@ Tracker
       <thead>
         <th>Name</th>
         <th>Number of tasks</th>
-        <th>Progress</th>
-        <th>Departments</th>
+        <th>Start Date</th>
+        <th>Due Date</th>
+        <th>Status</th>
         <th>Attachments</th>
       </thead>
       <tbody>
@@ -63,9 +64,9 @@ Tracker
             <a href="{% url 'show_project' project.id %}">{{project.name}}</a>
           </td>
           <td>{{project.tasks.all|length}}</td>
-          <td></td>
-          <td></td>
-
+          <td>{Start Date of First Task}</td>
+          <td>{Due Date of Last Task}</td>
+          <td>{Progress Bar}</td>
           <td>
             <label for="file-upload" class="custom-file-upload">
               Upload File
